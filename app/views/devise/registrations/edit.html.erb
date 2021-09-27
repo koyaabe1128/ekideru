@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="title">
-    <h1>Setting</h1>
+    <h1>Settings</h1>
     <p>ユーザー情報が編集できます。</p>
   </div>
   
@@ -56,8 +56,8 @@
       
       <div class="form-group">
         <h4>Delete Account</h4>
-        <p>退会するとアカウントは完全に削除されます。</p>
         <div>
+          <p>退会するとアカウントは完全に削除されます。</p>
           <%= link_to "退会する", registration_path(resource_name), data: { confirm: "本当にアカウントを削除しますか?" }, method: :delete, class: "btn btn-danger btn-block mx-auto" %>
         </div>
       </div>
