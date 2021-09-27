@@ -1,3 +1,75 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$main-color: #000;
+$sub-color: #7D7C83;
+
+//devise/registrations/edit.html.erb
+.wrapper {
+  padding: 100px 0;
+  .title {
+    h1 {
+      font-weight: 700;
+      text-align: center;
+      margin: 30px;
+    }
+    p {
+      color: $sub-color;
+      text-align: center;
+    }
+  }
+}
+
+.wrapper {
+  .panel {
+    width: 1100px;
+    border-radius: 14px;
+    box-shadow: 0 0 1px gray;
+    display:flex;
+    margin: 100px auto;
+  }
+}
+
+.wrapper {
+  .panel {
+    .panel_side {
+      width: 250px;
+      background-color: #F7F7F8;
+      border-radius: 14px 0 0 14px;
+      text-align: center;
+      padding: 30px 0;
+      a {
+        color: $sub-color;
+        text-decoration: none;
+      }
+    }
+  } 
+}
+
+.wrapper {
+  .panel {
+    .panel_body {
+      padding: 50px 50px;
+      width: 850px;
+      .form-group {
+        padding : 0 0 35px 0;
+        h4 {
+          font-size: 16px;
+          font-weight: bold;
+          border-bottom: 1px solid #ededee;
+          padding: 0 0 10px 0;
+        }
+        label {
+          font-size: 12px;
+          font-weight: bold;
+          color: $sub-color;
+        }
+        p {
+          font-size: 12px;
+          font-weight: bold;
+          color: $sub-color;
+        }
+      }
+    }
+  } 
+}
