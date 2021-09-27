@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'users/show'
   devise_for :users
   root 'places#index'
   
@@ -10,5 +11,8 @@ Rails.application.routes.draw do
       get :landmark
     end
   end
+  
+  resources :users, only: [:show]
+
   
 end

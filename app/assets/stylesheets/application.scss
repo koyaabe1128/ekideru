@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300,500,700&display=swap');
+
+$main-color: #000;
+$sub-color: #7D7C83;
+
+body {
+  font-family: 'M PLUS 1p', sans-serif;
+  color: $main-color;
+  padding: 0px;
+  margin: 0px;
+}
