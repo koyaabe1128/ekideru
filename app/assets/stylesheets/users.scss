@@ -4,7 +4,44 @@
 $main-color: #000;
 $sub-color: #7D7C83;
 
-//devise/registrations/edit.html.erb
+// devise/registrations/new & devise/sessions/new
+.form {
+  width: 470px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  margin: 90px auto;
+}
+
+.form {
+  .form_header {
+    padding: 30px;
+    text-align: center;
+    h2 {
+      font-weight: 700;
+    }
+    p {
+      color: $sub-color;
+      margin: 0px;
+    }
+  }
+  .form_body {
+    .custom-form {
+      width: 420px;
+      margin-bottom: 25px;
+    }
+    .remember_me {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  .form_footer {
+    border-top: 1px solid #ddd;
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+// devise/registrations/edit
 .wrapper {
   padding: 100px 0;
   .title {
