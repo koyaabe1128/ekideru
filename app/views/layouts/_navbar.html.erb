@@ -9,6 +9,9 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li class="nav-item"><%= link_to "管理者画面", admin_places_path, class: "nav-link pr-3" %></li>
+          <% end %>
           <li class="nav-item"><%= link_to "検索", search_places_path, class: "nav-link border-left px-3" %></li>
           <li class="nav-item"><%= link_to "戻る", :back, class: "nav-link pl-2 pr-3" %></li>
           <li class="nav-item dropdown">
