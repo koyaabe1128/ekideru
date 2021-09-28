@@ -1,1 +1,11 @@
-building
+<% breadcrumb :building %>
+
+<h1>建物・店一覧</h1>
+
+<ul>
+  <% @places.each do |place| %>
+    <li>
+      <%= link_to place.name, place_path(place) %>
+    </li>
+  <% end %>
+</ul>

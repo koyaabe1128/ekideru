@@ -2,6 +2,7 @@ class Admin::PlacesController < ApplicationController
   before_action :if_not_admin
 
   def index
+    @places = Place.all.order(:yomigana)
   end
   
   def new

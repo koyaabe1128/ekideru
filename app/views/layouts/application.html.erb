@@ -20,6 +20,9 @@
   <body>
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/toast' %>
-    <%= yield %>
+    <div class="container">
+      <%= breadcrumbs separator: " &rsaquo; " %>
+      <%= yield %>
+    </div>
   </body>
 </html>
