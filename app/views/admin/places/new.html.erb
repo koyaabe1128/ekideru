@@ -41,7 +41,7 @@
           <h4>Place kind</h4>
           <div>
             <%= f.label :kind, "０が建物や店、１が目印" %>
-            <%= f.select :kind, Place.kinds.keys,{ include_blank: "選択してください"}, { class: "form-control"} %>
+            <%= f.select :kind, ['0', '1'], {include_blank: '選択してください'}, class: 'form-control' %>
           </div>
         </div>
       

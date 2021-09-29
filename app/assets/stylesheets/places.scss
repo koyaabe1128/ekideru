@@ -1,0 +1,46 @@
+$main-color: #000;
+$sub-color: #7D7C83;
+
+// 検索画面 places/search
+
+.search_wrapper {
+  .title {
+    text-align: center;
+    padding: 50px 0;
+    h1 {
+      color: $main-color;
+      font-weight: 700;
+    }
+    p {
+      color: $sub-color;
+      margin: 0px;
+    }
+  }
+}
+
+.search_wrapper {
+  .panel_list {
+    display:flex;
+    justify-content: space-evenly;
+    .panel {
+      width: 500px;
+      border-radius: 14px;
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 50px;
+      h2 {
+        color :$main-color;
+        font-weight: 700;
+      }
+      p {
+        color: $sub-color;
+      }
+    }
+  }
+}
+
+.search_wrapper {
+  a {
+    text-decoration: none;
+  }
+}
