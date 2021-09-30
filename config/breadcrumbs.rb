@@ -14,7 +14,7 @@ end
 
 crumb :place_show do
   link Place.find(params[:id]).name
-  if Place.find(params[:id]).kind == 0
+  if Place.find(params[:id]).kind == "建物・店"
     parent :building
   else
     parent :landmark

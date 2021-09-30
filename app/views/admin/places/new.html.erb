@@ -41,7 +41,7 @@
           <h4>Place kind</h4>
           <div>
             <%= f.label :kind, "０が建物や店、１が目印" %>
-            <%= f.select :kind, ['0', '1'], {include_blank: '選択してください'}, class: 'form-control' %>
+            <%= f.select :kind, Place.kinds.keys,{ include_blank: "選択してください"}, class: "form-control" %>
           </div>
         </div>
       
@@ -49,7 +49,7 @@
           <h4>Exit number</h4>
           <div>
             <%= f.label :exit_num, "目的地に近い出口の番号" %>
-            <%= f.text_field :exit_num, autocomplete: "exit_num", class: "form-control" %>
+            <%= f.select :exit_num, Place.exit_nums.keys,{ include_blank: "選択してください"}, class: "form-control" %>
           </div>
         </div>
       
