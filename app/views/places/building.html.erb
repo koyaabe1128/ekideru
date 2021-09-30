@@ -1,11 +1,30 @@
 <% breadcrumb :building %>
 
-<h1>建物・店一覧</h1>
+<div class="wrapper">
+  <div class="title">
+    <h1>建物・店一覧</h1>
+  </div>
+  <div class="place_list">
+    <ul>
+      <% @places.each do |place| %>
+        <li>
+          <%= link_to place_path(place) do %>
+            <div class="place_panel">
+              <div class="place_image">
+                <%= image_tag place.image.url %>
+              </div>
+              <div class="place_detail">
+                <h5>
+                  <%= place.name %>
+                </h5>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-<ul>
-  <% @places.each do |place| %>
-    <li>
-      <%= link_to place.name, place_path(place) %>
-    </li>
-  <% end %>
-</ul>
+
+

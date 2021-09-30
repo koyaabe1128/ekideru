@@ -44,3 +44,56 @@ $sub-color: #7D7C83;
     text-decoration: none;
   }
 }
+
+// 建物・店一覧 & 目印一覧 places/building & places/landmark
+
+.wrapper {
+  padding: 50px 0;
+  .title {
+     text-align: center;
+     h1 {
+        color: $main-color;
+        font-weight: 700;
+        margin-bottom: 50px;
+     }
+  }
+}
+
+.wrapper {
+  .place_list {
+    .place_panel {
+      background-color: #F7F7F8;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      display:flex;
+      margin-bottom: 40px;
+      .place_image {
+        img {
+          border-radius: 8px 0 0 8px;
+          width: 250px;
+          height: 150px;
+          object-fit: cover;
+        }
+      }
+      .place_detail {
+        h5 {
+          color: $main-color;
+          font-weight: 700;
+          padding: 10px 30px;
+          margin: 0px;
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  .place_list {
+    ul {
+      list-style: none;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
