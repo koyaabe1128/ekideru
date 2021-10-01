@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :building
       get :landmark
     end
+    resources :favorites, only: [:create, :destroy]
   end
   
   namespace :admin do
