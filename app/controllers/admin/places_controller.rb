@@ -2,7 +2,11 @@ class Admin::PlacesController < ApplicationController
   before_action :if_not_admin
 
   def index
-    @places = Place.all.order(:yomigana)
+  end
+  
+  def list
+    @buildings = Place.where(kind:0).order(:yomigana)
+    @landmarks = Place.where(kind:1).order(:yomigana)
   end
   
   def new
@@ -12,20 +16,24 @@ class Admin::PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     if @place.save
-      redirect_to admin_place_path(@place)
+      redirect_to list_admin_places_path
     else
       redirect_to new_admin_place_path
     end
   end
   
-  def show
+  def edit
     @place = Place.find(params[:id])
   end
   
-  def edit
-  end
-  
   def update
+    @place = Place.find(params[:id])
+    
+    if @place.update(place_params)
+      redirect_to list_admin_places_path
+    else
+      render :edit
+    end
   end
   
   def destroy

@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="item1-tab" data-toggle="tab" href="#item1" role="tab" aria-controls="item1" aria-selected="true">building</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="item2-tab" data-toggle="tab" href="#item2" role="tab" aria-controls="item2" aria-selected="false">landmark</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="item1" role="tabpanel" aria-labelledby="item1-tab">
+      <div class="place_list">
+        <ul>
+          <% @buildings.each do |building| %>
+            <li>
+              <%= link_to edit_admin_place_path(building) do %>
+                <div class="place_panel">
+                  <div class="place_image">
+                    <%= image_tag building.image.url %>
+                  </div>
+                  <div class="place_detail">
+                    <h5>
+                      <%= building.name %>
+                    </h5>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="tab-pane fade" id="item2" role="tabpanel" aria-labelledby="item2-tab">
+      <div class="place_list">
+        <ul>
+          <% @landmarks.each do |landmark| %>
+            <li>
+              <%= link_to edit_admin_place_path(landmark) do %>
+                <div class="place_panel">
+                  <div class="place_image">
+                    <%= image_tag landmark.image.url %>
+                  </div>
+                  <div class="place_detail">
+                    <h5>
+                      <%= landmark.name %>
+                    </h5>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

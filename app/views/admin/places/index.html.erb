@@ -1,1 +1,22 @@
-<div><%= link_to "登録", new_admin_place_path %></div>
+<div class="search_wrapper">
+  <div class="title">
+    <h1>管理者画面へようこそ</h1>
+    <p>場所の登録や編集、削除などの管理ができます。</p>
+  </div>
+  
+  <div class="panel_list">
+    <%= link_to list_admin_places_path do %>
+      <div class="panel">
+        <h2>目的地一覧へ</h2>
+        <p>目的地の編集や削除ができます。</p>
+      </div>
+    <% end %>
+    
+    <%= link_to new_admin_place_path do %>
+      <div class="panel">
+        <h2>新規場所登録</h2>
+        <p>新しい目的地を追加できます。</p>
+      </div>
+    <% end %>
+  </div>
+</div>

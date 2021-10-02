@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
-    resources :places
+    resources :places do
+      collection do
+        get :list
+      end
+    end
   end
   
   resources :users, only: [:show]
