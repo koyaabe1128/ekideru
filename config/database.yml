@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: ekideru_development
+  database: shibuya_dungeon_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ekideru_test
+  database: shibuya_dungeon_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: ekideru_production
-  username: ekideru
-  password: <%= ENV['EKIDERU_DATABASE_PASSWORD'] %>
+  database: shibuya_dungeon_production
+  username: shibuya_dungeon
+  password: <%= ENV['shibuya_dungeon_DATABASE_PASSWORD'] %>
