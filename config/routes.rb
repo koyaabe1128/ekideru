@@ -7,15 +7,15 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
     collection do
       get :search
-      get :building
-      get :landmark
+      get :destination
+      get :exit
     end
   end
   
   namespace :admin do
     resources :places do
       collection do
-        get :list
+        get :destination
       end
     end
   end

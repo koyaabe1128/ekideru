@@ -1,18 +1,13 @@
-// devise/registrations/new & devise/sessions/new -> 4
-// devise/registrations/edit -> 44
+@import "variable";
+@import "mixin";
 
-$main-color: #000;
-$sub-color: #7D7C83;
+// 新規登録画面 ログイン画面 devise/registrations/new & devise/sessions/new
 
-// devise/registrations/new & devise/sessions/new
 .form {
+  font-family: $subFont;
   width: 470px;
-  border-radius: 14px;
-  border: 1px solid #ddd;
   margin: 90px auto;
-}
-
-.form {
+  @include boxStyle;
   .form_header {
     padding: 30px;
     text-align: center;
@@ -20,7 +15,7 @@ $sub-color: #7D7C83;
       font-weight: 700;
     }
     p {
-      color: $sub-color;
+      color: $subColor;
       margin: 0px;
     }
   }
@@ -41,53 +36,27 @@ $sub-color: #7D7C83;
   }
 }
 
-// devise/registrations/edit
-#wrapper {
-  padding: 100px 0;
-  #title {
-    h1 {
-      font-weight: 700;
-      text-align: center;
-      margin: 30px;
-    }
-    p {
-      color: $sub-color;
-      text-align: center;
-    }
-  }
-}
+// ユーザー編集画面 devise/registrations/edit 0
 
-#wrapper {
-  .panel {
+.user-edit-wrapper {
+  font-family: $subFont;
+  @include titleStyle;
+  .form_panel {
     width: 1100px;
-    border-radius: 14px;
-    border: 1px solid #ddd;
     display:flex;
     margin: 100px auto;
-  }
-}
-
-#wrapper {
-  .panel {
+    @include boxStyle;
     .panel_side {
       width: 250px;
       background-color: #F7F7F8;
       border-radius: 14px 0 0 14px;
       text-align: center;
-      padding: 30px 0;
-      a {
-        color: $sub-color;
-        text-decoration: none;
-      }
+      padding: 50px;
+      @include linkStyle($subColor);
     }
-  } 
-}
-
-#wrapper {
-  .panel {
     .panel_body {
-      padding: 50px 50px;
       width: 850px;
+      padding: 50px;
       .form-group {
         padding-bottom : 45px;
         margin: 0px;
@@ -101,15 +70,15 @@ $sub-color: #7D7C83;
         label {
           font-size: 12px;
           font-weight: 700;
-          color: $sub-color;
+          color: $subColor;
         }
         p {
           font-size: 12px;
           font-weight: 700;
-          color: $sub-color;
-          margin-bottom : 8px;
+          color: $subColor;
+          margin: 7px 0;
         }
       }
     }
-  } 
+  }
 }

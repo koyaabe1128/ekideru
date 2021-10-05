@@ -1,58 +1,45 @@
-$main-color: #000;
-$sub-color: #7D7C83;
+@import "variable";
+@import "mixin";
 
-// 検索画面 places/search
+// トップページ places/index
 
-.search_wrapper {
-  .title {
-    text-align: center;
-    padding: 50px 0;
-    h1 {
-      color: $main-color;
-      font-weight: 700;
-    }
-    p {
-      color: $sub-color;
-      margin: 0px;
-    }
+.toppage {
+  width: auto;
+  height: auto;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 }
 
-.search_wrapper {
-  .panel_list {
+
+// 検索画面 places/search 0
+
+.search-wrapper {
+  @include linkStyle;
+  @include titleStyle;
+  .panel_area {
     display:flex;
     justify-content: space-evenly;
     .panel {
       width: 500px;
-      border-radius: 14px;
-      border: 1px solid #ddd;
-      text-align: center;
       padding: 50px;
-      h2 {
-        color :$main-color;
-        font-weight: 700;
-      }
-      p {
-        color: $sub-color;
-      }
+      @include boxStyle;
+      @include panelStyle
     }
   }
 }
 
-.search_wrapper {
-  a {
-    text-decoration: none;
-  }
-}
 
-// 建物・店一覧 & 目印一覧 places/building & places/landmark
+// 目的地一覧
 
 .wrapper {
   padding: 50px 0;
   .title {
      text-align: center;
      h1 {
-        color: $main-color;
+        color: $mainColor;
         font-weight: 700;
         margin-bottom: 50px;
      }
@@ -62,14 +49,12 @@ $sub-color: #7D7C83;
 .wrapper {
   .place_list {
     .place_panel {
-      background-color: #F7F7F8;
-      border-radius: 8px;
-      border: 1px solid #ddd;
       display:flex;
       margin-bottom: 40px;
+      @include boxStyle;
       .place_image {
         img {
-          border-radius: 8px 0 0 8px;
+          border-radius: 14px 0 0 14px;
           width: 250px;
           height: 150px;
           object-fit: cover;
@@ -77,7 +62,7 @@ $sub-color: #7D7C83;
       }
       .place_detail {
         h5 {
-          color: $main-color;
+          color: $mainColor;
           font-weight: 700;
           padding: 10px 30px;
           margin: 0px;

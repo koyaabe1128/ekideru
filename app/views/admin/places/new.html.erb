@@ -1,12 +1,12 @@
 <!--管理者画面-->
 
-<div class="new_place">
+<div class="admin-new-wrapper">
   <div class="title">
     <h1>登録</h1>
     <p>新しい場所を登録できます。</p>
   </div>
   
-  <div class="panel">
+  <div class="form_panel">
     <div class="panel_side">
       <%= link_to "場所設定", new_admin_place_path %>
     </div>
@@ -37,14 +37,6 @@
           </div>
         </div>
         
-        <div class="form-group">
-          <h4>Place kind</h4>
-          <div>
-            <%= f.label :kind, "０が建物や店、１が目印" %>
-            <%= f.select :kind, Place.kinds.keys,{ include_blank: "選択してください"}, class: "form-control" %>
-          </div>
-        </div>
-      
         <div class="form-group">
           <h4>Exit number</h4>
           <div>

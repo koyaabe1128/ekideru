@@ -1,87 +1,76 @@
-// 管理者画面
-$main-color: #000;
-$sub-color: #7D7C83;
+@import "variable";
+@import "mixin";
 
-// 新規登録画面 admin/places/new
-.new_place {
-  padding: 100px 0;
-  .title {
-    h1 {
-      font-weight: 700;
-      text-align: center;
-      margin: 30px;
-    }
-    p {
-      color: $sub-color;
-      text-align: center;
+// 管理者トップページ 0
+.admin-wrapper {
+  @include linkStyle;
+  @include titleStyle;
+  .panel_area {
+    display:flex;
+    justify-content: space-evenly;
+    .panel {
+      width: 500px;
+      padding: 50px;
+      @include boxStyle;
+      @include panelStyle
     }
   }
 }
 
-.new_place {
-  .panel {
+
+// 新規登録画面 admin/places/new 0
+
+.admin-new-wrapper {
+  font-family: $subFont;
+  @include titleStyle;
+  .form_panel {
     width: 1100px;
-    border-radius: 14px;
-    border: 1px solid #ddd;
     display:flex;
     margin: 100px auto;
-  }
-}
-
-.new_place {
-  .panel {
+    @include boxStyle;
     .panel_side {
       width: 250px;
       background-color: #F7F7F8;
       border-radius: 14px 0 0 14px;
       text-align: center;
-      padding: 30px 0;
-      a {
-        color: $sub-color;
-        text-decoration: none;
-      }
+      padding: 50px;
+      @include linkStyle($subColor);
     }
-  } 
-}
-
-.new_place {
-  .panel {
     .panel_body {
-      padding: 50px 50px;
       width: 850px;
+      padding: 50px;
       .form-group {
         padding-bottom : 45px;
         margin: 0px;
         h4 {
           font-size: 16px;
-          font-weight: bold;
+          font-weight: 700;
           border-bottom: 1px solid #ededee;
           padding-bottom: 18px;
           margin: 0px;
         }
         label {
           font-size: 12px;
-          font-weight: bold;
-          color: $sub-color;
+          font-weight: 700;
+          color: $subColor;
         }
       }
     }
-  } 
+  }
 }
+
 
 // 場所一覧画面
 
 .place_list {
   padding-top: 50px;
   .place_panel {
-    background-color: #F7F7F8;
-    border-radius: 8px;
-    border: 1px solid #ddd;
     display:flex;
     margin-bottom: 40px;
+    @include boxStyle;
     .place_image {
       img {
-        border-radius: 8px 0 0 8px;
+        border-radius: 14px 0 0 14px;
         width: 250px;
         height: 150px;
         object-fit: cover;
@@ -89,7 +78,7 @@ $sub-color: #7D7C83;
     }
     .place_detail {
       h5 {
-        color: $main-color;
+        color: $mainColor;
         font-weight: 700;
         padding: 10px 30px;
         margin: 0px;

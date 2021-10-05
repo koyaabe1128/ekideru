@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_025044) do
+ActiveRecord::Schema.define(version: 2021_10_04_074328) do
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_10_01_025044) do
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.integer "kind"
     t.integer "exit_num"
     t.string "yomigana"
     t.datetime "created_at", null: false

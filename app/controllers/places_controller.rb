@@ -5,12 +5,11 @@ class PlacesController < ApplicationController
   def search
   end
   
-  def building
-    @places = Place.where(kind:0).order(:yomigana)
+  def destination
+    @places = Place.all.order(:yomigana)
   end
   
-  def landmark
-    @places = Place.where(kind:1).order(:yomigana)
+  def exit
   end
 
   def show

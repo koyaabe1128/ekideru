@@ -1,24 +1,26 @@
-<% breadcrumb :root %>
-
-<div class="search_wrapper">
-  <div class="title">
-    <h1>何から探しますか？</h1>
-    <p>目的地に応じた出口を見つけて、効率よく渋谷駅を脱出しましょう！</p>
-  </div>
+<div class="container">
+  <% breadcrumb :root %>
   
-  <div class="panel_list">
-    <%= link_to building_places_path do %>
-      <div class="panel">
-        <h2>建物・店</h2>
-        <p>目的地の名称から出口を探せます。</p>
-      </div>
-    <% end %>
+  <div class="search-wrapper">
+    <div class="title">
+      <h1>何から探しますか？</h1>
+      <p>目的地に応じた出口を見つけて、効率よく渋谷駅を脱出しましょう！</p>
+    </div>
     
-    <%= link_to landmark_places_path do %>
-      <div class="panel">
-        <h2>目印</h2>
-        <p>特徴的な場所から出口を探せます。</p>
-      </div>
-    <% end %>
+    <div class="panel_area">
+      <%= link_to destination_places_path do %>
+        <div class="panel">
+          <h2>目的地</h2>
+          <p>目的地の名称から出口を探せます。</p>
+        </div>
+      <% end %>
+      
+      <%= link_to exit_places_path do %>
+        <div class="panel">
+          <h2>出口</h2>
+          <p>出口ごとから近い場所を探せます。</p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

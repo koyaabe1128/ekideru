@@ -4,9 +4,8 @@ class Admin::PlacesController < ApplicationController
   def index
   end
   
-  def list
-    @buildings = Place.where(kind:0).order(:yomigana)
-    @landmarks = Place.where(kind:1).order(:yomigana)
+  def destination
+    @places = Place.all.order(:yomigana)
   end
   
   def new
@@ -46,7 +45,7 @@ class Admin::PlacesController < ApplicationController
   end
   
   def place_params
-    params.permit(:name, :yomigana, :image, :kind, :exit_num)
+    params.permit(:name, :yomigana, :image, :exit_num)
   end
   
 end
