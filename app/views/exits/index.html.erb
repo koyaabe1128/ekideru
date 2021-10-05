@@ -1,0 +1,13 @@
+<div class="container">
+  <div>
+    <ul>
+      <% @exits.each do |exit| %>
+        <li>
+          <%= link_to exit_path(exit) do %>
+            <%= exit.number %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'exits/index'
   devise_for :users
   root 'places#index'
   
@@ -21,5 +22,6 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:show]
+  resources :exits, only: [:index, :show]
 
 end

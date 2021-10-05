@@ -15,4 +15,8 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
   end
+  
+  private
+  
+  @exit = ["A0", "A1", "A2"]
 end

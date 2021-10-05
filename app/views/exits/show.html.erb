@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @exit.number %>から近い目的地</h1>
+  
+  <ul>
+    <% @exit.connected_place.each do |place| %>
+      <li>
+        <%= place.name %>
+      </li>
+    <% end %>
+  </ul>
+</div>

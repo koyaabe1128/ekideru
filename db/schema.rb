@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_074328) do
+ActiveRecord::Schema.define(version: 2021_10_05_143300) do
+
+  create_table "connections", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "place_id"
+    t.bigint "exit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exit_id"], name: "index_connections_on_exit_id"
+    t.index ["place_id", "exit_id"], name: "index_connections_on_place_id_and_exit_id", unique: true
+    t.index ["place_id"], name: "index_connections_on_place_id"
+  end
+
+  create_table "exits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -44,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_10_04_074328) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "connections", "exits"
+  add_foreign_key "connections", "places"
   add_foreign_key "favorites", "places"
   add_foreign_key "favorites", "users"
 end
