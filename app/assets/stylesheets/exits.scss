@@ -3,9 +3,17 @@
 
 .exit-wrapper {
   @include titleStyle;
-  ul {
-    list-style: none;
-    @include linkStyle;
+  .exit_panel_area {
+    display:flex;
+    justify-content: space-evenly;
+    @include listStyle;
+    .exit_panel {
+      width: 200px;
+      padding: 30px 50px;
+      @include boxStyle;
+      h3 {
+        text-align: center;
+      }
+    }
   }
 }
-

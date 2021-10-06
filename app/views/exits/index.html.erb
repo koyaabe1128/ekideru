@@ -3,14 +3,58 @@
     <div class="title">
       <h1>出口 一覧</h1>
     </div>
-    <ul>
-      <% @exits.each do |exit| %>
-        <li>
-          <%= link_to exit_path(exit) do %>
-            <%= exit.number %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+    
+    <div class="exit_panel_area">
+      <ul>
+        <% @exits.each do |exit| %>
+          <div class="exit_panel">
+            <li>
+              <%= link_to exit_path(exit) do %>
+                <h3><%= exit.number %></h3>
+              <% end %>
+            </li>
+          </div>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">-->
+<!--  <div class="exit-wrapper">-->
+<!--    <div class="title">-->
+<!--      <h1>出口 一覧</h1>-->
+<!--    </div>-->
+<!--    <div class="exit_panel_area">-->
+<!--      <ul>-->
+<!--        <% @exits.each do |exit| %>-->
+<!--          <li>-->
+<!--            <%= link_to exit_path(exit) do %>-->
+<!--              <div class="exit_panel">-->
+<!--                <h2><%= exit.number %></h2>-->
+<!--              </div>-->
+<!--            <% end %>-->
+<!--          </li>-->
+<!--        <% end %>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

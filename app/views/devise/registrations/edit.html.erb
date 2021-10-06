@@ -1,66 +1,68 @@
-<div class="user-edit-wrapper">
-  <div class="title">
-    <h1>Settings</h1>
-    <p>ユーザー情報が編集できます。</p>
-  </div>
-  
-  <div class="form_panel">
-    <div class="panel_side">
-      <%= link_to "アカウント設定", edit_user_registration_path %>
+<div class="container">
+  <div class="user-edit-wrapper">
+    <div class="title">
+      <h1>Settings</h1>
+      <p>ユーザー情報が編集できます。</p>
     </div>
-    <div class="panel_body">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <div class="form-group">
-          <h4>Username</h4>
-          <div>
-            <%= f.label :name, "ユーザーネーム" %>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+    <div class="row form_panel border no-gutters">
+      <div class="col-sm-3 panel_side">
+        <%= link_to "アカウント設定", edit_user_registration_path %>
+      </div>
+      <div class="col-sm-9 panel_body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <div class="form-group">
+            <h4>Username</h4>
+            <div>
+              <%= f.label :name, "ユーザーネーム" %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+            </div>
           </div>
-        </div>
+          
+          <div class="form-group">
+            <h4>Email</h4>
+            <div>
+              <%= f.label :email, "新しいメールアドレス" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+          </div>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+          
+          <div class="form-group">
+            <h4>New Password</h4>
+            <div>
+              <%= f.label :password, "新しいパスワード(空欄のままなら変更しません)" %> 
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            </div>
+            <div>
+              <%= f.label :password_confirmation, "新しいパスワードの確認" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
+          </div>
         
-        <div class="form-group">
-          <h4>Email</h4>
-          <div>
-            <%= f.label :email, "新しいメールアドレス" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          <div class="form-group">
+            <h4>Current Password</h4>
+            <div>
+              <%= f.label :current_password, "現在のパスワード(変更を反映するには現在のパスワードを入力してください)" %>
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+            </div>
           </div>
-        </div>
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        
+          <div class="form-group">
+            <%= f.submit "完了", class: "btn btn-primary btn-block mx-auto" %>
+          </div>
         <% end %>
         
         <div class="form-group">
-          <h4>New Password</h4>
+          <h4>Delete Account</h4>
           <div>
-            <%= f.label :password, "新しいパスワード(空欄のままなら変更しません)" %> 
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            <p>退会するとアカウントは完全に削除されます。</p>
+            <%= link_to "退会する", registration_path(resource_name), data: { confirm: "本当にアカウントを削除しますか?" }, method: :delete, class: "btn btn-danger btn-block mx-auto" %>
           </div>
-          <div>
-            <%= f.label :password_confirmation, "新しいパスワードの確認" %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-          </div>
-        </div>
-      
-        <div class="form-group">
-          <h4>Current Password</h4>
-          <div>
-            <%= f.label :current_password, "現在のパスワード(変更を反映するには現在のパスワードを入力してください)" %>
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
-          </div>
-        </div>
-      
-        <div class="form-group">
-          <%= f.submit "完了", class: "btn btn-primary btn-block mx-auto" %>
-        </div>
-      <% end %>
-      
-      <div class="form-group">
-        <h4>Delete Account</h4>
-        <div>
-          <p>退会するとアカウントは完全に削除されます。</p>
-          <%= link_to "退会する", registration_path(resource_name), data: { confirm: "本当にアカウントを削除しますか?" }, method: :delete, class: "btn btn-danger btn-block mx-auto" %>
         </div>
       </div>
     </div>
   </div>
 </div>
+  
