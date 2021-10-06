@@ -45,7 +45,11 @@ class Admin::PlacesController < ApplicationController
   end
   
   def place_params
-    params.permit(:name, :yomigana, :image, :exit_num)
+    params.permit(:name, :yomigana, :image)
+  end
+  
+  def counts(exit)
+    
   end
   
 end

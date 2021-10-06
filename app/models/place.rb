@@ -2,7 +2,6 @@ class Place < ApplicationRecord
   validates :name, presence: true, length: { maximum: 30 }
   validates :yomigana, presence: true, length: { maximum: 70 }
   validates :image, presence: true
-  validates :exit_num, presence: true
   
   has_many :favorites, dependent: :destroy
   has_many :connections, dependent: :destroy

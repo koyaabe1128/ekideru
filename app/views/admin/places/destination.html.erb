@@ -1,25 +1,28 @@
-<div class="wrapper">
-  <div class="title">
-    <h1>目的地 一覧</h1>
-  </div>
-  <div class="place_list">
-    <ul>
-      <% @places.each do |place| %>
-        <li>
-          <%= link_to place_path(place) do %>
-            <div class="place_panel">
-              <div class="place_image">
-                <%= image_tag place.image.url %>
-              </div>
-              <div class="place_detail">
-                <h5>
-                  <%= place.name %>
-                </h5>
-              </div>
-            </div>
+<div class="container">
+  <div class="admin-table-wrapper">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>場所名</th>
+          <th>読み仮名</th>
+          <th>出口</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% @places.each do |place| %>
+            <%= link_to edit_admin_place_path(place) do %>
+              <td><%= place.id %></td>
+            <% end %>
+            <td><%= place.name %></td>
+            <td><%= place.yomigana %></td>
+            <% place.connected_exit.each do |exit| %>
+              <td><%= exit.number %></td>
+            <% end %>
           <% end %>
-        </li>
-      <% end %>
-    </ul>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
