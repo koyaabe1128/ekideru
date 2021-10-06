@@ -1,15 +1,18 @@
 <!--管理者画面-->
 
-<div class="new_place">
-  <div class="title">
-    <h1><%= @place.name %> を編集</h1>
-    <p>場所を編集して再登録できます。</p>
-  </div>
-  
-  <div class="panel">
-    <div class="panel_side">
-      <%= link_to "編集画面", edit_admin_place_path %>
+<div class="container">
+  <div class="admin-wrapper">
+    <div class="title">
+      <h1>編集</h1>
+      <p>場所を編集して再登録できます。</p>
     </div>
-    <%= render "form", place: @place %>
+    <div class="row form_panel border no-gutters">
+      <div class="col-sm-3 panel_side">
+        <%= link_to "編集画面", edit_admin_place_path %>
+      </div>
+      <div class="col-sm-9 panel_body">
+        <%= render "form", place: @place %>
+      </div>
+    </div>
   </div>
 </div>

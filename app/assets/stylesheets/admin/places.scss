@@ -20,24 +20,69 @@
 
 // 新規登録画面 admin/places/new 0
 
-.admin-new-wrapper {
+// .admin-new-wrapper {
+//   font-family: $subFont;
+//   @include titleStyle;
+//   .form_panel {
+//     width: 1100px;
+//     display:flex;
+//     margin: 100px auto;
+//     @include boxStyle;
+//     .panel_side {
+//       width: 250px;
+//       background-color: #F7F7F8;
+//       border-radius: 14px 0 0 14px;
+//       text-align: center;
+//       padding: 50px;
+//       @include linkStyle($subColor);
+//     }
+//     .panel_body {
+//       width: 850px;
+//       padding: 50px;
+//       .form-group {
+//         padding-bottom : 45px;
+//         margin: 0px;
+//         h4 {
+//           font-size: 16px;
+//           font-weight: 700;
+//           border-bottom: 1px solid #ededee;
+//           padding-bottom: 18px;
+//           margin: 0px;
+//         }
+//         label {
+//           font-size: 12px;
+//           font-weight: 700;
+//           color: $subColor;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+//目的地一覧テーブル admin/places/destination
+
+.admin-table-wrapper {
+  .table {
+    font-family: $subFont;
+  }
+}
+
+
+//場所編集画面 admin/places/edit
+.admin-wrapper {
+  padding: 50px 0;
   font-family: $subFont;
   @include titleStyle;
   .form_panel {
-    width: 1100px;
     display:flex;
-    margin: 100px auto;
-    @include boxStyle;
     .panel_side {
-      width: 250px;
       background-color: #F7F7F8;
-      border-radius: 14px 0 0 14px;
       text-align: center;
-      padding: 50px;
+      padding: 50px 0;
       @include linkStyle($subColor);
     }
     .panel_body {
-      width: 850px;
       padding: 50px;
       .form-group {
         padding-bottom : 45px;
@@ -56,14 +101,5 @@
         }
       }
     }
-  }
-}
-
-
-//目的地一覧テーブル admin/places/destination
-
-.admin-table-wrapper {
-  .table {
-    font-family: $subFont;
   }
 }
