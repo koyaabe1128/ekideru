@@ -10,18 +10,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <% @places.each do |place| %>
+        <% @places.each do |place| %>
+          <tr onclick='window.location="<%= "/admin/places/" + place.id.to_s + "/edit" %>"' role="link">
             <%= link_to edit_admin_place_path(place) do %>
               <td><%= place.id %></td>
+              <td><%= place.name %></td>
+              <td><%= place.yomigana %></td>
+              <% place.connected_exit.each do |exit| %>
+                <td><%= exit.number %></td>
+              <% end %>
             <% end %>
-            <td><%= place.name %></td>
-            <td><%= place.yomigana %></td>
-            <% place.connected_exit.each do |exit| %>
-              <td><%= exit.number %></td>
-            <% end %>
-          <% end %>
-        </tr>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

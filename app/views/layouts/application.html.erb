@@ -21,7 +21,7 @@
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/toast' %>
     
-      <%= breadcrumbs separator: " &rsaquo; " %>
-      <%= yield %>
+    <%= breadcrumbs separator: " &rsaquo; ", class: "breadcrumb" %> 
+    <%= yield %>
   </body>
 </html>

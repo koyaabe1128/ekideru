@@ -13,19 +13,23 @@
  *= require_tree .
  *= require_self
  */
+@import "variable";
+@import "mixin";
+ 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@700&display=swap');
 
-$main-color: #000;
-$sub-color: #7D7C83;
-$mainFont: 'Kaisei Decol', serif;
+header {
+  .navbar-brand {
+    font-family: $subFont;
+  }
+}
 
 body {
   font-family: $mainFont;
-  color: $main-color;
+  color: $mainColor;
   padding: 0px;
   margin: 0px;
-  
 }
 
 .container {
@@ -36,10 +40,8 @@ body {
   padding: 0px;
 }
 
-nav {
-  .navbar-brand {
-    font-family: $mainFont;
-  }
+.wrapper {
+  padding: 50px 0;
 }
 
 .fav-on-btn {
@@ -48,6 +50,18 @@ nav {
 }
 
 .fav-off-btn {
-  color: $sub-color;
+  color: $subColor;
   font-size: 23px;
+}
+
+.breadcrumb {
+  background-color: #FFF;
+  border-bottom: 1px solid #ddd;
+  a {
+    color: $subColor;
+    padding: 0 20px;
+  }
+  .current {
+    padding: 0 20px;
+  }
 }

@@ -4,7 +4,7 @@
 // 新規登録画面 ログイン画面 devise/registrations/new & devise/sessions/new
 
 .form {
-  font-family: $subFont;
+  font-family: $mainFont;
   width: 470px;
   margin: 90px auto;
   @include boxStyle;
@@ -40,7 +40,7 @@
 
 .user-edit-wrapper {
   padding: 50px 0;
-  font-family: $subFont;
+  font-family: $mainFont;
   @include titleStyle;
   .form_panel {
     display:flex;

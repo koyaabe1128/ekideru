@@ -14,37 +14,39 @@
 }
 
 
-// 検索画面 places/search 0
+// 検索画面 places/search
 
-.search-wrapper {
+.wrapper {
   @include linkStyle;
   @include titleStyle;
   .panel_area {
-    display:flex;
-    justify-content: space-evenly;
     .panel {
-      width: 500px;
-      padding: 50px;
-      @include boxStyle;
+      padding: 50px 10px;
       @include panelStyle;
+      @include boxStyle;
+      div {
+        color: $subColor;
+        font-size: 50px;
+        padding: 20px;
+      }
     }
   }
 }
 
 
+
 // 目的地一覧
 
-.wrapper {
-  padding: 50px 0;
-  .title {
-     text-align: center;
-     h1 {
-        color: $mainColor;
-        font-weight: 700;
-        margin-bottom: 50px;
-     }
-  }
-}
+// .wrapper {
+//   padding: 50px 0;
+//   .title {
+//     text-align: center;
+//     h1 {
+//         color: $mainColor;
+//         font-weight: 700;
+//     }
+//   }
+// }
 
 .wrapper {
   .place_list {

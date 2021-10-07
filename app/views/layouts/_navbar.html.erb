@@ -10,10 +10,22 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <% if current_user.admin? %>
-            <li class="nav-item"><%= link_to "管理者画面", admin_places_path, class: "nav-link pr-3" %></li>
+            <li class="nav-item">
+              <%= link_to admin_places_path, class: "nav-link pr-3" do %>
+                <i class="fas fa-tools"></i>
+              <% end %>
+            </li>
           <% end %>
-          <li class="nav-item"><%= link_to "検索", search_places_path, class: "nav-link border-left px-3" %></li>
-          <li class="nav-item"><%= link_to "戻る", :back, class: "nav-link pl-2 pr-3" %></li>
+          <li class="nav-item">
+            <%= link_to search_places_path, class: "nav-link border-left px-3" do %>
+              <i class="fas fa-search-location"></i>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to :back, class: "nav-link pl-2 pr-3" do %>
+              <i class="fas fa-undo-alt"></i>
+            <% end %>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle border-left pl-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= current_user.name %>
@@ -33,3 +45,4 @@
     </div>
   </nav>
 </header>
+
