@@ -3,15 +3,20 @@ crumb :root do
 end
 
 crumb :destination do
-  link "目的地", destination_places_path
+  link "目的地一覧", destination_places_path
   parent :root
 end
 crumb :exit do
-  link "出口", exit_places_path
+  link "出口一覧", exits_path
   parent :root
 end
 
 crumb :place_show do
   link Place.find(params[:id]).name
   parent :destination
+end
+
+crumb :exit_show do
+  link Exit.find(params[:id]).number
+  parent :exit
 end

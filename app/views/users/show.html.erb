@@ -1,2 +1,26 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="wrapper">
+    <div class="profile_info">
+      <div><i class="fas fa-user-circle"></i></div>
+      <h1><%= current_user.name %></h1>
+    </div>
+    <div class="profile_fav">
+      <% if current_user.favorites? %>
+        <div class="row justify-content-center no-gutters fav_area">
+          <% current_user.favorites.each do |favorite| %>
+            <div class="col-11 col-md-6 fav">
+              <div class="col-12 fav_image">
+                <%= image_tag favorite.place.image.url, class: "image" %>
+              </div>
+              <div class="col-12 fav_name">
+                <h6><%= favorite.place.name %></h6>
+              </div>
+            </div>
+            <% end %>
+        </div>
+      <% else %>
+      　<div class="NoFavMessage"><i class="fas fa-exclamation-circle"></i> まだお気に入りはありません。</div>
+      <% end %>
+    </div>
+  </div>
+</div>

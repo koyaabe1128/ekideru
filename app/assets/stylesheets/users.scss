@@ -36,6 +36,7 @@
   }
 }
 
+
 // ユーザー編集画面 devise/registrations/edit 0
 
 .user-edit-wrapper {
@@ -74,6 +75,51 @@
           margin: 7px 0;
         }
       }
+    }
+  }
+}
+
+
+//ユーザー詳細ページ
+.wrapper {
+  .profile_info {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 50px 0;
+    div {
+      font-size: 80px;
+    }
+    h1 {
+      font-weight: 700;
+      margin: 0px;
+    }
+  }
+  .profile_fav {
+    .fav_area {
+      .fav {
+        @include boxStyle;
+        margin: 50px 0 0 0;
+        .fav_image {
+          height: 150px;
+          border-bottom: 1px solid #ddd;
+          padding: 0px;
+          .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+          }
+        }
+        .fav_name {
+          h6 {
+            margin: 10px;
+          }
+        }
+      }
+    }
+    .NoFavMessage {
+      color: $subColor;
+      text-align:center;
     }
   }
 }

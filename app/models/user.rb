@@ -7,4 +7,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 30 }
   
   has_many :favorites, dependent: :destroy
+  
+  # お気に入りを一つでもしているか確認する
+  def favorites?
+    self.favorites.exists?
+  end
 end
