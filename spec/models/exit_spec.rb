@@ -10,11 +10,11 @@ RSpec.describe Exit, type: :model do
     end
     
     context "登録失敗" do
-      it "numbarが空だと登録できない" do
+      it "numberが空だと登録できない" do
         exit = build(:exit, number: "")
         expect(exit).to be_invalid
       end
-      it "numbarが６文字より大きいと登録できない" do
+      it "numberが６文字より大きいと登録できない" do
         exit = build(:exit, number: "a" * 7)
         expect(exit).to be_invalid
       end
