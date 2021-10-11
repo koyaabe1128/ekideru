@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
-  validates :name, presence: true, length: { maximum: 30 }
-  validates :yomigana, presence: true, length: { maximum: 70 }, format: { with: /\A[ぁ-んー－]+\z/ }
+  validates :name, presence: true, length: { maximum: 30 }, uniqueness: true
+  validates :yomigana, presence: true, length: { maximum: 70 }, format: { with: /\A[ぁ-んー－]+\z/ }, uniqueness: true
   # validates :image, presence: true
   
   has_many :favorites, dependent: :destroy

@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :exit do
-    numbar {"A0"}
+    number {"A0"}
   end
 end
