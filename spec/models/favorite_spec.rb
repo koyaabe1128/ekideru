@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Favorite, type: :model do
   describe "いいね機能" do
